@@ -50,8 +50,8 @@ public class AppointmentServiceImpl implements AppointmentService {
         if (patientOptional.isEmpty() || slotOptional.isEmpty())
             throw new AppointmentException("no patient or slot is found");
         Slot slot = slotOptional.get();
-        if (!slot.getDate().equals(appointment.getBookingDate()))
-            throw new AppointmentException("No slots' data and bookingDate mismatch");
+//        if (!slot.getDate().equals(appointment.getBookingDate()))
+//            throw new AppointmentException("No slots' data and bookingDate mismatch");
         if (slot.getAvailableSlots() < 1)
             throw new AppointmentException("Slot is full");
         slot.setAvailableSlots(slot.getAvailableSlots() - 1);
